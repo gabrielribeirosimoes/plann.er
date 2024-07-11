@@ -1,4 +1,4 @@
-package com.rocketseat.planner.participant;
+package com.rocketseat.planner.link;
 
 import com.rocketseat.planner.trip.Trip;
 import jakarta.persistence.*;
@@ -10,33 +10,31 @@ import lombok.Setter;
 import java.util.UUID;
 
 @Entity
-@Table(name= "participants")
+@Table(name = "links")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Participant {
+public class Link {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column (name = "is_confirmed", nullable = false)
-    private Boolean isConfirmed;
+    @Column(nullable = false)
+    private String url;
 
     @Column (nullable = false)
-    private String name;
-
-    @Column (nullable = false)
-    private String email;
+    private String title;
 
     @ManyToOne
     @JoinColumn(name = "trip_id", nullable = false)
     private Trip trip;
 
-    public Participant(String email, Trip trip){
-        this.email = email;
+    public Link(String title, String url, Trip trip) {
+        this.title = title;
+        this.url = url;
         this.trip = trip;
-        this.isConfirmed = false;
-        this.name= "";
+
     }
 }
