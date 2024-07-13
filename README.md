@@ -1,6 +1,3 @@
-## nlw-journey-2024-rocketseat
-Trilha de Java
-
 # Plann.er
 
 Plann.er é um projeto desenvolvido em Java com o objetivo de ajudar os usuários a organizar suas viagens, seja a trabalho ou lazer. Com o Plann.er, é possível criar uma viagem especificando nome, data de início e fim, e planejar atividades para cada dia da viagem.
